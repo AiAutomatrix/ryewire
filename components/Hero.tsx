@@ -13,8 +13,10 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" 
-          alt="Heavy duty truck and SUV fleet" 
-          className="w-full h-full object-cover" 
+          alt="Heavy duty truck and SUV fleet available for financing in Canada" 
+          className="w-full h-full object-cover"
+          // @ts-ignore - React 18 types might not include fetchPriority yet, but browsers support it
+          fetchPriority="high"
         />
         {/* Dark overlay to darken the image uniformly */}
         <div className="absolute inset-0 bg-slate-900/70"></div>
