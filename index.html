@@ -17,7 +17,6 @@
     <meta name="geo.placename" content="Canada" />
     
     <!-- 3. Open Graph (Facebook, LinkedIn, WhatsApp) -->
-    <!-- Using the Hero Section image for the preview -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ryewire.vercel.app/" />
     <meta property="og:title" content="Rise Broker Firm | Bad Credit Financing & Vehicle Inventory" />
@@ -36,6 +35,9 @@
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop" />
     <meta name="twitter:image:alt" content="Heavy duty truck and SUV fleet available for financing" />
 
+    <!-- PRELOAD CRITICAL ASSETS TO PREVENT FLASH -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +66,7 @@
       body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     </style>
     
-    <!-- 5. Structured Data (Schema.org) for AI Knowledge Graph -->
+    <!-- 5. Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -145,36 +147,88 @@
 </head>
   <body>
     <div id="root">
-      <!-- 6. Manual Prerendering for SEO/AI Crawlers -->
-      <div style="background-color: #0f172a; color: white; padding: 40px; font-family: sans-serif; min-height: 100vh;">
-        <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px;">Trucks, SUVs, Cars. We Have It All.</h1>
-        <p style="font-size: 1.25rem; margin-bottom: 30px;">
-          Excellent financing options for every client’s needs. With over 1,000 vehicles in inventory throughout Canada, we get you what you want within your budget.
-        </p>
-        
-        <h2>Financing For All Credit Levels</h2>
-        <p>At Rise Broker Firm, we don't let a credit score stand between you and your vehicle.</p>
-        <ul>
-          <li><strong>Bad Credit to Good Credit financing:</strong> Whether you have pristine credit or have faced challenges, we can get you approved.</li>
-          <li><strong>30+ Different Lenders:</strong> We work with major banks and specialized lenders.</li>
-          <li><strong>90 Days No Payments:</strong> Drive now, pay later options available.</li>
-          <li><strong>Canada-Wide Delivery:</strong> We deliver specifically to your location.</li>
-        </ul>
+      <!-- 
+         HYDRATION MATCHING:
+         This HTML structure mirrors the Header.tsx and Hero.tsx components exactly.
+         This ensures that when the browser paints this HTML first, it looks exactly 
+         like the final React app, preventing the "hiccup" or flash of unstyled content.
+      -->
+      
+      <!-- Static Header -->
+      <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <div class="bg-secondary p-1.5 rounded-lg">
+              <!-- Static SVG for CarFront Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8"/><path d="M7 14h.01"/><path d="M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
+            </div>
+            <span class="font-bold text-xl text-slate-900 tracking-tight">Rise Broker Firm</span>
+          </div>
+          <button class="inline-flex items-center justify-center px-4 py-2 border text-sm font-medium rounded-lg shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 border-transparent text-white bg-secondary hover:bg-secondaryLight focus:ring-secondary shadow-md hover:shadow-lg">
+            Apply Now
+          </button>
+        </div>
+      </header>
 
-        <h2>Frequently Asked Questions</h2>
-        <dl>
-          <dt><strong>Do you really accept bad credit?</strong></dt>
-          <dd>Yes. We have specialized programs for bad credit, no credit, or past bankruptcies.</dd>
-          
-          <dt><strong>Where do you deliver?</strong></dt>
-          <dd>We offer Canada-wide delivery to your door.</dd>
-          
-          <dt><strong>What kind of warranty is available?</strong></dt>
-          <dd>We offer comprehensive aftermarket warranty coverage to protect your purchase.</dd>
-        </dl>
-
-        <a href="https://calendly.com/ryewire204/30min" style="display: inline-block; background-color: #ea580c; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px;">Book A Call</a>
+      <!-- Static Hero Section -->
+      <div class="relative bg-slate-900 overflow-hidden min-h-[600px]">
+        <!-- Background Image Layer -->
+        <div class="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" 
+            alt="Heavy duty truck and SUV fleet available for financing in Canada" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-slate-900/70"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-transparent"></div>
+        </div>
+  
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+          <div class="lg:w-3/4">
+            <div class="inline-flex items-center px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-orange-400 font-medium text-sm mb-6 backdrop-blur-sm bg-slate-900/50">
+              <span class="flex h-2 w-2 rounded-full bg-secondary mr-2 animate-pulse"></span>
+              Bad Credit to Good Credit — We Get You Approved
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6 drop-shadow-xl">
+              Trucks, SUVs, Cars.<br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">We Have It All.</span>
+            </h1>
+            
+            <p class="mt-4 text-xl text-slate-100 max-w-3xl mb-8 leading-relaxed drop-shadow-md font-medium">
+              Excellent financing options for every client’s needs. With over 1,000 vehicles in inventory throughout Canada, we get you what you want within your budget.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mb-12">
+              <button class="inline-flex items-center justify-center px-6 py-3 border text-base font-medium rounded-lg shadow-sm transition-all duration-200 border-transparent text-white bg-secondary text-lg px-8 py-4 shadow-xl shadow-secondary/20 border border-white/10">
+                Easy Application
+              </button>
+              <button class="inline-flex items-center justify-center px-6 py-3 border text-base font-medium rounded-lg shadow-sm transition-all duration-200 border-white/80 text-white bg-transparent text-lg px-8 py-4 bg-slate-900/30 backdrop-blur-sm">
+                View Benefits
+              </button>
+            </div>
+  
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-slate-200 text-sm font-medium border-t border-white/10 pt-8">
+              <div class="flex items-center">
+                <!-- Static SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary mr-3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                <span>90 Days No Payments</span>
+              </div>
+              <div class="flex items-center">
+                <!-- Static SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary mr-3"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>Aftermarket Warranty</span>
+              </div>
+              <div class="flex items-center">
+                <!-- Static SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-secondary mr-3"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Canada-Wide Delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
     <script type="module" src="/index.tsx"></script>
   </body>
