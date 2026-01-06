@@ -15,8 +15,8 @@ export const Hero: React.FC = () => {
           src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop" 
           alt="Heavy duty truck and SUV fleet available for financing in Canada" 
           className="w-full h-full object-cover"
-          // @ts-ignore - React 18 types might not include fetchPriority yet, but browsers support it
-          fetchPriority="high"
+          // @ts-ignore - React expects lowercase for custom attributes like fetchpriority
+          fetchpriority="high"
         />
         {/* Dark overlay to darken the image uniformly */}
         <div className="absolute inset-0 bg-slate-900/70"></div>
